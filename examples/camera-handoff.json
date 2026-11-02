@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "title": "Camera handoff practice",
+  "concept": "Plan a continuous handoff from the lead singer to another band member and back.",
+  "duration": 12,
+  "direction": {
+    "director": "Your directing approach",
+    "directorStyle": "Continuous movement timed to musical phrases",
+    "lighting": "Soft directional light; preserve natural skin detail",
+    "colors": "Warm subjects against a cooler background"
+  },
+  "scenes": [
+    {
+      "id": "demo-handoff",
+      "title": "Singer to guitarist and back",
+      "start": 0,
+      "end": 6,
+      "role": "singing",
+      "section": "Chorus",
+      "status": "idea",
+      "singer": "Lead singer",
+      "lipSync": true,
+      "performers": [
+        {
+          "name": "Guitarist",
+          "instrument": "guitar"
+        }
+      ],
+      "media": {},
+      "userNotes": "Practice only: replace the timing and performance with your actual song.",
+      "assistantNotes": "",
+      "shotPlan": {
+        "start": "Medium view of the singer",
+        "middle": "Travel to the guitarist on a musical response",
+        "end": "Return to the singer on the next phrase",
+        "timing": "0s singer; 2s guitarist; 5s singer",
+        "continuity": "Maintain performer positions and lighting through the move"
+      },
+      "studio": {
+        "framing": "Medium",
+        "angle": "Eye level",
+        "motion": "Tracking",
+        "performance": "Keep singing and moving throughout the shot; the guitarist continues playing while attention changes.",
+        "camera": {
+          "performers": [
+            {
+              "id": "demo-singer",
+              "name": "Lead singer",
+              "x": 25,
+              "y": 35,
+              "action": "Continue the vocal performance with expressive body movement."
+            },
+            {
+              "id": "demo-guitarist",
+              "name": "Guitarist",
+              "x": 75,
+              "y": 35,
+              "action": "Continue the musical performance and respond to the singer."
+            }
+          ],
+          "points": [
+            {
+              "id": "demo-start",
+              "time": 0,
+              "x": 25,
+              "y": 80,
+              "target": "demo-singer",
+              "framing": "Medium",
+              "cue": "Begin on the lead vocal"
+            },
+            {
+              "id": "demo-middle",
+              "time": 2,
+              "x": 75,
+              "y": 80,
+              "target": "demo-guitarist",
+              "framing": "Medium",
+              "cue": "Move on the musical response"
+            },
+            {
+              "id": "demo-return",
+              "time": 5,
+              "x": 25,
+              "y": 80,
+              "target": "demo-singer",
+              "framing": "Close-up",
+              "cue": "Return on the next lyric"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "demo-reaction",
+      "title": "Reaction and story beat",
+      "start": 6,
+      "end": 12,
+      "role": "reaction",
+      "status": "idea",
+      "lipSync": false,
+      "performers": [],
+      "media": {},
+      "userNotes": "Add a distinct reaction picture when developing your real project."
+    }
+  ],
+  "studio": {
+    "music": {
+      "bpm": 120,
+      "offset": 0,
+      "beatsPerBar": 4,
+      "status": "draft",
+      "cues": [
+        {
+          "id": "demo-cue",
+          "time": 2,
+          "type": "accent",
+          "label": "Camera handoff",
+          "status": "draft"
+        }
+      ],
+      "energy": [
+        {
+          "id": "demo-opening",
+          "time": 0,
+          "energy": 3,
+          "label": "Opening"
+        },
+        {
+          "id": "demo-build",
+          "time": 6,
+          "energy": 5,
+          "label": "Build"
+        },
+        {
+          "id": "demo-payoff",
+          "time": 12,
+          "energy": 4,
+          "label": "Payoff"
+        }
+      ]
+    },
+    "lookbook": [
+      {
+        "id": "demo-lesson",
+        "title": "Handoff and return",
+        "kind": "lesson",
+        "lesson": "Keep both performers active throughout a continuous shot. Time attention changes to the music.",
+        "movement": "Singer to band member and back in one scene."
+      }
+    ]
+  },
+  "view": {
+    "tab": "desk",
+    "deskView": "camera",
+    "deskSceneId": "demo-handoff",
+    "selected": "demo-handoff",
+    "time": 0
+  }
+}

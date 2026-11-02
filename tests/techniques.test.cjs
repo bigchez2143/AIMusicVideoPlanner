@@ -1,0 +1,21 @@
+const assert=require('node:assert/strict');
+const T=require('../web/scene-techniques.js');
+const Timeline=require('../web/timeline-core.js');
+assert.equal(new Set(T.catalog.map(t=>t.key)).size,T.catalog.length);
+assert.ok(Object.keys(T.categories).every(c=>T.catalog.some(t=>t.category===c)));
+const choice=T.entry('continuous-reframe','choice-a');
+assert.equal(choice.title,'Continuous reframing between performers');
+assert.ok(choice.description.includes('uninterrupted'));
+choice.directions='Georgia Belle to Ruby';
+assert.equal(T.entry('continuous-reframe','choice-b').directions,'');
+assert.equal(T.entry('custom','custom-a','lighting').category,'lighting');
+const scenes=[{id:'a',start:0,end:4,title:'First',techniques:[choice],shotPlan:{start:'Start A',middle:'Middle A'},media:{}},
+ {id:'b',start:4,end:8,title:'Second',techniques:[{...choice,directions:'Return to Georgia Belle'}],shotPlan:{start:'Start B',end:'End B'},media:{}}];
+const before=JSON.stringify(scenes),merged=Timeline.merge(scenes,0,8);
+assert.equal(JSON.stringify(scenes),before);
+assert.equal(merged[0].techniques.length,2);
+assert.notEqual(merged[0].techniques[0].id,merged[0].techniques[1].id);
+assert.ok(merged[0].shotPlan.start.includes('Start A')&&merged[0].shotPlan.start.includes('Start B'));
+assert.equal(merged[0].shotPlan.end,'End B');
+assert.equal(Timeline.reorder(scenes,0,1,8)[1].techniques[0].directions,'Georgia Belle to Ruby');
+console.log('Technique catalog and timeline preservation checks passed.');

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "title": "New music video",
+  "direction": {
+    "directorStyle": "Cinematic story with playful reactions",
+    "settings": "Describe the approved locations",
+    "lighting": "Warm practical lights with cool night accents",
+    "colors": "Ember orange, deep teal, worn gold"
+  },
+  "scenes": [
+    {
+      "id": "example-opening-scene",
+      "title": "Introduce the world",
+      "start": 0,
+      "end": 8,
+      "section": "Intro",
+      "role": "story",
+      "status": "idea",
+      "assistantNotes": "Proposed action goes here. Revise against the actual song and approved story.",
+      "singer": "Lead singer",
+      "lipSync": false,
+      "performers": [{ "name": "Lead singer", "instrument": "" }],
+      "location": "",
+      "emotion": "Curiosity",
+      "media": {},
+      "assetStatus": "missing",
+      "motionPrompt": "",
+      "reviewNotes": ""
+    }
+  ]
+}
